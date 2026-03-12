@@ -1,5 +1,4 @@
 #!/bin/bash
-
 SOURCE="/etc/nginx"
 DEST="/backup/nginx_$(date +%Y-%m-%d)"
 sudo mkdir -p $DEST

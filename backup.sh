@@ -6,7 +6,7 @@ sudo mkdir -p $DEST
 LOGFILE="/var/log/backup.log"
 sudo touch $LOGFILE
 sudo chmod 644 $LOGFILE
-cp -r $SOURCE $DEST
+sudo cp -r $SOURCE $DEST
 if [ $? -eq 0 ]; then
 echo "File copied successfully!"
 echo "$(date): Backup successfully - $DEST" | sudo tee -a $LOGFILE

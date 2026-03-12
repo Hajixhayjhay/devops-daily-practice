@@ -4,6 +4,8 @@ SOURCE="/etc/nginx"
 DEST="/backup/nginx_$(date +%Y-%m-%d)"
 mkdir -p $DEST
 LOGFILE="/var/log/backup.log"
+touch $LOGFILE
+sudo chmod 644 $LOGFILE
 cp -r $SOURCE $DEST
 if [ $? -eq 0 ]; then
 echo "File copied successfully!"

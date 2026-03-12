@@ -10,6 +10,7 @@ sudo cp -r $SOURCE $DEST
 if [ $? -eq 0 ]; then
 echo "File copied successfully!"
 echo "$(date): Backup successfully - $DEST" | sudo tee -a $LOGFILE
+aws s3 cp $DEST s3://nginx-backup-hajarat/ --recursive
 else
 echo "Error!: failed to copy files"
 echo "$(date): Backup failed - $DEST" | sudo tee -a $LOGFILE

@@ -9,10 +9,10 @@ sudo chmod 644 $LOGFILE
 cp -r $SOURCE $DEST
 if [ $? -eq 0 ]; then
 echo "File copied successfully!"
-echo "$(date): Backup successfully - $DEST" >> $LOGFILE
+echo "$(date): Backup successfully - $DEST" >> sudo tee -a $LOGFILE
 else
 echo "Error!: failed to copy files"
-echo "$(date): Backup failed - $DEST" >> $LOGFILE
+echo "$(date): Backup failed - $DEST" >> sudo tee -a $LOGFILE
 fi
 
 
